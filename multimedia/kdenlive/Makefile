@@ -13,12 +13,29 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libmlt.so:multimedia/mlt \
 		libqjson.so:devel/qjson
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX} \
-		${LOCALBASE}/lib/mlt/libmltqt.so:multimedia/mlt-qt4
+		${LOCALBASE}/lib/mlt/libmltqt.so:multimedia/mlt-qt5
 
 USES=		cmake kde:5 pkgconfig shared-mime-info tar:xz
-USE_KDE=	automoc
-USE_QT5=	corelib dbus gui opengl script svg xml \
-		moc_build qmake_build rcc_build uic_build
+USE_KDE=	\
+	archive  \
+	bookmarks \
+	coreaddons \
+	config \
+	configwidgets \
+	dbusaddons \
+	kio \
+	widgetsaddons \
+	notifyconfig \
+	newstuff \
+	notifications \
+	guiaddons \
+	textwidgets \
+	iconthemes \
+	crash \
+	doctools \
+	filemetadata5
+USE_QT5=	core dbus gui opengl script svg xml \
+		qmake_build
 USE_XORG=	x11
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
 

@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	kdenlive
-PORTVERSION=	0.9.10
-PORTREVISION=	3
+PORTVERSION=	17.04.2
 CATEGORIES=	multimedia kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src/
+MASTER_SITES=	KDE/stable/applications/${PORTVERSION}/src/
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	KDE professional quality non-linear video editing suite
@@ -16,9 +15,9 @@ LIB_DEPENDS=	libmlt.so:multimedia/mlt \
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX} \
 		${LOCALBASE}/lib/mlt/libmltqt.so:multimedia/mlt-qt4
 
-USES=		cmake kde:4 pkgconfig shared-mime-info tar:bzip2
-USE_KDE=	automoc4 kdelibs nepomuk-core
-USE_QT4=	corelib dbus gui opengl script svg xml \
+USES=		cmake kde:5 pkgconfig shared-mime-info tar:xz
+USE_KDE=	automoc
+USE_QT5=	corelib dbus gui opengl script svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"

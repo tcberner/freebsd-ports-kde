@@ -15,6 +15,7 @@
     SUBDIR += R-cran-R6
     SUBDIR += R-cran-RUnit
     SUBDIR += R-cran-Rcpp
+    SUBDIR += R-cran-bindr
     SUBDIR += R-cran-bit
     SUBDIR += R-cran-bit64
     SUBDIR += R-cran-bitops
@@ -38,6 +39,7 @@
     SUBDIR += R-cran-memoise
     SUBDIR += R-cran-microbenchmark
     SUBDIR += R-cran-pkgmaker
+    SUBDIR += R-cran-plogr
     SUBDIR += R-cran-plyr
     SUBDIR += R-cran-praise
     SUBDIR += R-cran-proto
@@ -4963,6 +4965,7 @@
     SUBDIR += py3-freezegun
     SUBDIR += py3-gobject3
     SUBDIR += py3-hgtools
+    SUBDIR += py3-icalendar
     SUBDIR += py3-jedi
     SUBDIR += py3-jsonschema
     SUBDIR += py3-libpeas
@@ -5003,6 +5006,7 @@
     SUBDIR += py3-tabulate
     SUBDIR += py3-threema-msgapi
     SUBDIR += py3-tox
+    SUBDIR += py3-tzlocal
     SUBDIR += py3-urwid
     SUBDIR += py3-vcversioner
     SUBDIR += py3-virtualenv

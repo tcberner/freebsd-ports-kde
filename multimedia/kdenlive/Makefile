@@ -16,29 +16,12 @@ RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX} \
 		${LOCALBASE}/lib/mlt/libmltqt.so:multimedia/mlt-qt5
 
 USES=		cmake kde:5 pkgconfig shared-mime-info tar:xz
-USE_KDE=	\
-	archive  \
-	bookmarks \
-	codecs \
-	coreaddons \
-	config \
-	configwidgets \
-	crash \
-	dbusaddons \
-	doctools \
-	filemetadata5 \
-	guiaddons \
-	i18n \
-	iconthemes \
-	kio \
-	newstuff \
-	notifications \
-	notifyconfig \
-	textwidgets \
-	widgetsaddons
+USE_KDE=	archive bookmarks codecs coreaddons config configwidgets \
+		crash dbusaddons doctools filemetadata5 guiaddons i18n \
+		iconthemes kio newstuff notifications notifyconfig \
+		textwidgets widgetsaddons
 USE_QT5=	core dbus gui buildtools_build network opengl script svg \
-		widgets xml \
-		qmake_build
+		widgets xml qmake_build
 USE_XORG=	x11
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
 

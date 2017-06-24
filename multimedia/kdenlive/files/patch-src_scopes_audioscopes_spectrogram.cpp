@@ -1,3 +1,20 @@
+Fix ambiguity of abs().
+
+[7%] Building CXX object src/CMakeFiles/kdenlive.dir/scopes/audioscopes/spectrogram.cpp.o
+/tmp/usr/ports/multimedia/kdenlive/work/kdenlive-16.04.3/src/scopes/audioscopes/spectrogram.cpp:276:77: error: call to 'abs' is ambiguous
+            hideText = m_aTrackMouse->isChecked() && m_mouseWithinWidget && abs(x-(leftDist + mouseX + 30)) < (int) minDistX
+                                                                            ^~~
+/usr/include/stdlib.h:83:6: note: candidate function
+int      abs(int) __pure2;
+         ^
+/usr/include/c++/v1/stdlib.h:115:44: note: candidate function
+inline _LIBCPP_INLINE_VISIBILITY long      abs(     long __x) _NOEXCEPT {return  labs(__x);}
+                                           ^
+/usr/include/c++/v1/stdlib.h:117:44: note: candidate function
+inline _LIBCPP_INLINE_VISIBILITY long long abs(long long __x) _NOEXCEPT {return llabs(__x);}
+                                           ^
+[...]
+
 --- src/scopes/audioscopes/spectrogram.cpp.orig 2017-06-15 13:00:06 UTC
 +++ src/scopes/audioscopes/spectrogram.cpp
 @@ -199,7 +199,7 @@ QImage Spectrogram::renderHUD(uint)

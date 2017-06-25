@@ -56,7 +56,7 @@ KIOSLAVES_DESC=		SDK related KIO slaves
 KIOSLAVES_RUN_DEPENDS=	${KDE_PREFIX}/lib/kde4/kio_svn.so:devel/kdesdk4-kioslaves
 
 KOMPARE_DESC=		Diff/Patch frontend
-KOMPARE_RUN_DEPENDS=	${KDE_PREFIX}/bin/kompare:textproc/kompare
+KOMPARE_RUN_DEPENDS=	${KDE_PREFIX}/bin/kompare:textproc/kompare-kde4
 
 LOKALIZE_DESC=		Computer-aided translation system
 LOKALIZE_RUN_DEPENDS=	${KDE_PREFIX}/bin/lokalize:devel/lokalize

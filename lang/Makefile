@@ -68,6 +68,7 @@
     SUBDIR += erlang-runtime17
     SUBDIR += erlang-runtime18
     SUBDIR += erlang-runtime19
+    SUBDIR += erlang-runtime20
     SUBDIR += erlang-wx
     SUBDIR += execline
     SUBDIR += expect
@@ -333,6 +334,7 @@
     SUBDIR += spidermonkey170
     SUBDIR += spidermonkey185
     SUBDIR += spidermonkey24
+    SUBDIR += spidermonkey38
     SUBDIR += spl
     SUBDIR += squeak
     SUBDIR += squirrel

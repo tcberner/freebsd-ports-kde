@@ -62,7 +62,7 @@ LOKALIZE_DESC=		Computer-aided translation system
 LOKALIZE_RUN_DEPENDS=	${KDE_PREFIX}/bin/lokalize:devel/lokalize
 
 OKTETA_DESC=		Hex editor
-OKTETA_RUN_DEPENDS=	${KDE_PREFIX}/bin/okteta:devel/okteta
+OKTETA_RUN_DEPENDS=	${KDE_PREFIX}/bin/okteta:devel/okteta-kde4
 
 POXML_DESC=		Tools to translate DocBook XML using gettext
 POXML_RUN_DEPENDS=	${KDE_PREFIX}/bin/po2xml:devel/poxml

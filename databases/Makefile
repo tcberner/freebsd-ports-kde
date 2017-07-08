@@ -568,6 +568,7 @@
     SUBDIR += pg_citus
     SUBDIR += pg_qualstats
     SUBDIR += pg_reorg
+    SUBDIR += pg_repack
     SUBDIR += pg_rman
     SUBDIR += pg_stat_kcache
     SUBDIR += pg_statsinfo
@@ -579,6 +580,7 @@
     SUBDIR += pgbouncer
     SUBDIR += pgdbf
     SUBDIR += pgespresso
+    SUBDIR += pgFormatter
     SUBDIR += pgfouine
     SUBDIR += pgloader
     SUBDIR += pglogical
@@ -649,6 +651,7 @@
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += pldebugger
+    SUBDIR += plpgsql_check
     SUBDIR += postgis-jdbc
     SUBDIR += postgis20
     SUBDIR += postgis21

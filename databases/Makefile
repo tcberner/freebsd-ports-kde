@@ -97,7 +97,8 @@
     SUBDIR += gomdb
     SUBDIR += gosqlite3
     SUBDIR += gqlplus
-    SUBDIR += grass
+    SUBDIR += grass6
+    SUBDIR += grass7
     SUBDIR += gtksql
     SUBDIR += hamsterdb
     SUBDIR += hashtypes
@@ -567,6 +568,8 @@
     SUBDIR += percona57-server
     SUBDIR += pg_activity
     SUBDIR += pg_citus
+    SUBDIR += pg_dirtyread
+    SUBDIR += pg_partman
     SUBDIR += pg_qualstats
     SUBDIR += pg_reorg
     SUBDIR += pg_repack
@@ -584,6 +587,7 @@
     SUBDIR += pgFormatter
     SUBDIR += pgfouine
     SUBDIR += pgloader
+    SUBDIR += pgloader3
     SUBDIR += pglogical
     SUBDIR += pgmodeler
     SUBDIR += pgpool
@@ -674,6 +678,14 @@
     SUBDIR += postgresql-repmgr2
     SUBDIR += postgresql-tds_fdw
     SUBDIR += postgresql-zhparser
+    SUBDIR += postgresql10-client
+    SUBDIR += postgresql10-contrib
+    SUBDIR += postgresql10-docs
+    SUBDIR += postgresql10-pgtcl
+    SUBDIR += postgresql10-plperl
+    SUBDIR += postgresql10-plpython
+    SUBDIR += postgresql10-pltcl
+    SUBDIR += postgresql10-server
     SUBDIR += postgresql92-client
     SUBDIR += postgresql92-contrib
     SUBDIR += postgresql92-docs
@@ -724,8 +736,10 @@
     SUBDIR += proftpd-mod_sql_tds
     SUBDIR += puppetdb-terminus3
     SUBDIR += puppetdb-terminus4
+    SUBDIR += puppetdb-terminus5
     SUBDIR += puppetdb3
     SUBDIR += puppetdb4
+    SUBDIR += puppetdb5
     SUBDIR += pure-sql3
     SUBDIR += puredb
     SUBDIR += pxlib
@@ -879,6 +893,7 @@
     SUBDIR += ruby-qdbm
     SUBDIR += ruby-tokyocabinet
     SUBDIR += ruby-xapian
+    SUBDIR += rubygem-active_model_serializers
     SUBDIR += rubygem-active_record_query_trace
     SUBDIR += rubygem-activemodel-serializers-xml
     SUBDIR += rubygem-activemodel4
@@ -937,6 +952,7 @@
     SUBDIR += rubygem-hiredis
     SUBDIR += rubygem-jdbc-mysql
     SUBDIR += rubygem-leo_manager_client
+    SUBDIR += rubygem-mario-redis-lock
     SUBDIR += rubygem-memcache
     SUBDIR += rubygem-memcache-client
     SUBDIR += rubygem-mysql

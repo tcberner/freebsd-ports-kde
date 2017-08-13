@@ -109,6 +109,7 @@
     SUBDIR += dir2ogg
     SUBDIR += discid
     SUBDIR += dream
+    SUBDIR += drumgizmo
     SUBDIR += drumpiler
     SUBDIR += dsbmixer
     SUBDIR += dssi
@@ -392,6 +393,7 @@
     SUBDIR += liblastfm
     SUBDIR += liblo
     SUBDIR += liblscp
+    SUBDIR += libltc
     SUBDIR += libmad
     SUBDIR += libmatemixer
     SUBDIR += libmikmod
@@ -627,12 +629,14 @@
     SUBDIR += py-al
     SUBDIR += py-ao
     SUBDIR += py-apetag
+    SUBDIR += py-aubio
     SUBDIR += py-cddb
     SUBDIR += py-discid
     SUBDIR += py-discogs-client
     SUBDIR += py-eyed3
     SUBDIR += py-fmoo-audiotools
     SUBDIR += py-gmusicapi
+    SUBDIR += py-gmusicproxy
     SUBDIR += py-hsaudiotag
     SUBDIR += py-id3
     SUBDIR += py-karaoke
@@ -816,6 +820,7 @@
     SUBDIR += wmsmixer
     SUBDIR += workman
     SUBDIR += wxguitar
+    SUBDIR += x42-plugins-lv2
     SUBDIR += xanalyser
     SUBDIR += xcd
     SUBDIR += xcdplayer
@@ -859,6 +864,7 @@
     SUBDIR += xwave
     SUBDIR += yell
     SUBDIR += zinf
+    SUBDIR += zita-convolver
     SUBDIR += zita-resampler
     SUBDIR += zynaddsubfx
 

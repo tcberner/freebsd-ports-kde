@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error \
 		libopenvas_base.so:security/openvas${OPENVAS_VER}-libraries \
 		libmicrohttpd.so:www/libmicrohttpd
 

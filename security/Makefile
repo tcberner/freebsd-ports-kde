@@ -38,7 +38,6 @@
     SUBDIR += base
     SUBDIR += bcrypt
     SUBDIR += bcwipe
-    SUBDIR += bdc
     SUBDIR += bdes
     SUBDIR += bearssl
     SUBDIR += beecrypt
@@ -209,6 +208,7 @@
     SUBDIR += hashcat
     SUBDIR += hashcat-legacy
     SUBDIR += heimdal
+    SUBDIR += highwayhash
     SUBDIR += hitch
     SUBDIR += hlfl
     SUBDIR += hmap
@@ -1042,6 +1042,7 @@
     SUBDIR += rubygem-encryptor
     SUBDIR += rubygem-ezcrypto
     SUBDIR += rubygem-googleauth
+    SUBDIR += rubygem-gpgme
     SUBDIR += rubygem-gpgr
     SUBDIR += rubygem-gssapi
     SUBDIR += rubygem-hkdf

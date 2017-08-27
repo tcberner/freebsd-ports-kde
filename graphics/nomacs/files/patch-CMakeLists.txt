@@ -1,0 +1,21 @@
+CMake 3.9 complains about duplicate else()
+--- CMakeLists.txt.orig 2017-08-27 20:18:57.440439000 +0000
++++ CMakeLists.txt      2017-08-27 20:19:19.799974000 +0000
+@@ -50,7 +50,7 @@
+ 	include(${CMAKE_SOURCE_DIR}/cmake/Win.cmake)
+ elseif(APPLE)
+ 	include(${CMAKE_SOURCE_DIR}/cmake/Mac.cmake)
+-else(UNIX)
++elseif(UNIX)
+ 	include(${CMAKE_SOURCE_DIR}/cmake/Unix.cmake)
+ else()
+ 	message(STATUS "build system unkown ... fallback to unix")
+@@ -146,7 +146,7 @@
+ 	include(${CMAKE_SOURCE_DIR}/cmake/WinBuildTarget.cmake)
+ elseif(APPLE)
+ 	include(${CMAKE_SOURCE_DIR}/cmake/MacBuildTarget.cmake)
+-else(UNIX)
++elseif(UNIX)
+ 	include(${CMAKE_SOURCE_DIR}/cmake/UnixBuildTarget.cmake)
+ else()
+ 	message(STATUS "build system unkown ... fallback to unix")

@@ -23,7 +23,7 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 USE_GL=		gl glu
 USE_XORG=	ice inputproto sm x11 xau xcb xdamage xdmcp xext xfixes xft xi \
 		xproto xrender xscrnsaver xt xxf86vm
-USES=		tar:bzip2 bison pathfix cmake:outsource pkgconfig tk:85 shebangfix
+USES=		tar:bzip2 bison pathfix cmake:outsource pkgconfig tk:85
 USE_LDCONFIG=	yes
 
 PREFIX?=	${LOCALBASE}/${PORTNAME}
@@ -38,9 +38,10 @@ MANPREFIX=	${PREFIX}/share
 
 BROKEN_sparc64=	does not compile: invokes i386 assembler
 
-# This is where the source-file is, but it still seems to
-# end up with a bad shebang when installed as bin/intaval-g.py
-SHEBANG_FILES=	src/conv/intaval-g.py
+# stage-qa warns about this script, but since brlcad doesn't depend
+# on Python, a regular shebangfix won't do anything.
+#
+# SHEBANG_FILES=	src/conv/intaval-g.py
 
 post-patch:
 	@${REINPLACE_CMD} "s+-exact Tcl 8\.5\.9+Tcl 8.5+" ${WRKSRC}/src/other/tcl/library/init.tcl

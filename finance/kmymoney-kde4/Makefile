@@ -19,7 +19,7 @@ LIB_DEPENDS=	libboost_graph.so:devel/boost-libs \
 		libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error
 
-USES=		cmake kde:4 pkgconfig shared-mime-info shebangfix tar:xz
+USES=		cmake:noninja kde:4 pkgconfig shared-mime-info shebangfix tar:xz
 USE_QT4=	corelib gui dbus declarative network phonon script sql svg xml \
 		qmake_build moc_build rcc_build uic_build
 USE_KDE=	automoc4 kdelibs pimlibs soprano

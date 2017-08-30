@@ -1,0 +1,28 @@
+Already upstreamed, cmake 3.9 compatibility.
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 6cccaba6..6f8c3f05 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -1,6 +1,11 @@
+ CMAKE_MINIMUM_REQUIRED(VERSION 2.7)
+ PROJECT("Sayonara Player")
+ 
++IF(POLICY CMP0071)
++    CMAKE_POLICY(SET CMP0071 OLD)
++    SET(CMAKE_POLICY_DEFAULT_CMP0071 OLD)  # Don't reset in subdirs
++ENDIF()
++
+ set (CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}")
+ INCLUDE(cotire)
+ SET(VAR_SAYONARA_VERSION "0.9.2")
+@@ -24,6 +28,9 @@ CONFIGURE_FILE(Macros.h.in "${CMAKE_CURRENT_BINARY_DIR}/src/Helper/Macros.h" @ON
+ MESSAGE("Build Sayonara ${VAR_SAYONARA_VERSION}")
+ MESSAGE("Will install to ${CMAKE_INSTALL_PREFIX}")
+ 
++# CMake 3.9 searches full UI-file paths
++SET(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/src)
++
+ ADD_SUBDIRECTORY(src)
+ ADD_SUBDIRECTORY(resources)
+ 

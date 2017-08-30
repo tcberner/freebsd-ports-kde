@@ -38,6 +38,11 @@ MANPREFIX=	${PREFIX}/share
 
 BROKEN_sparc64=	does not compile: invokes i386 assembler
 
+# stage-qa warns about this script, but since brlcad doesn't depend
+# on Python, a regular shebangfix won't do anything.
+#
+# SHEBANG_FILES=	src/conv/intaval-g.py
+
 post-patch:
 	@${REINPLACE_CMD} "s+-exact Tcl 8\.5\.9+Tcl 8.5+" ${WRKSRC}/src/other/tcl/library/init.tcl
 

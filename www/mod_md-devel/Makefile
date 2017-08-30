@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mod_md-devel
-PORTVERSION=	0.0.20170809
+PORTVERSION=	0.7.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -20,7 +21,6 @@ USE_APACHE=	24+
 
 GH_ACCOUNT=	icing
 GH_PROJECT=	mod_md
-GH_TAGNAME=	1e07174
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=ext-
@@ -31,15 +31,20 @@ MODULENAME=	${GH_PROJECT}
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-#DOCSDIR=	share/docs/mod_md
+DOCSDIR=	share/doc/mod_md
 PORTDOCS=	README README.md
 PLIST_FILES=	${APACHEMODDIR}/mod_md.so.0.0.0 \
 		${APACHEMODDIR}/mod_md.so
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100085 && ${SSL_DEFAULT} == base
+IGNORE=		port requires OpenSSL 1.0.2 or later, set DEFAULT_VERSIONS+= ssl=openssl
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so
-	${MV} ${STAGEDIR}${PREFIX}/share/doc/mod_cert ${STAGEDIR}${PREFIX}/share/doc/mod_md-devel
-	${RM} ${STAGEDIR}${PREFIX}/share/doc/mod_md-devel/LICENSE
+	${RM} ${STAGEDIR}${PREFIX}/share/doc/mod_md/LICENSE
 	${RM} ${STAGEDIR}${PREFIX}/bin/ext-a2md
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

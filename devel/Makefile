@@ -4223,6 +4223,7 @@
     SUBDIR += py-atomiclong
     SUBDIR += py-atomicwrites
     SUBDIR += py-attrs
+    SUBDIR += py-atpublic
     SUBDIR += py-automaton
     SUBDIR += py-avro
     SUBDIR += py-babel
@@ -4377,6 +4378,8 @@
     SUBDIR += py-flake8-quotes
     SUBDIR += py-flask-babel
     SUBDIR += py-flexmock
+    SUBDIR += py-flufl.i18n
+    SUBDIR += py-flufl.lock
     SUBDIR += py-foolscap
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
@@ -4421,6 +4424,7 @@
     SUBDIR += py-grizzled
     SUBDIR += py-grouch
     SUBDIR += py-grpcio
+    SUBDIR += py-gtfslib
     SUBDIR += py-gyp
     SUBDIR += py-hash_ring
     SUBDIR += py-hghooks
@@ -4490,6 +4494,8 @@
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
     SUBDIR += py-krosspython
+    SUBDIR += py-lazr.config
+    SUBDIR += py-lazr.delegates
     SUBDIR += py-lazy
     SUBDIR += py-lazy-object-proxy
     SUBDIR += py-levenshtein
@@ -4679,10 +4685,12 @@
     SUBDIR += py-pyperclip
     SUBDIR += py-pypugjs
     SUBDIR += py-pyqi
+    SUBDIR += py-pyqtree
     SUBDIR += py-pyral
     SUBDIR += py-pyrfc3339
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
+    SUBDIR += py-pyshp
     SUBDIR += py-pysparklines
     SUBDIR += py-pystorm
     SUBDIR += py-pyte

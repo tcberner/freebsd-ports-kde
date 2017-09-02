@@ -4654,6 +4654,7 @@
     SUBDIR += py-pycodestyle
     SUBDIR += py-pycparser
     SUBDIR += py-pydenticon
+    SUBDIR += py-pydevd
     SUBDIR += py-pydispatcher
     SUBDIR += py-pydocstyle
     SUBDIR += py-pydoop
@@ -5556,6 +5557,7 @@
     SUBDIR += rubygem-mixlib-shellout
     SUBDIR += rubygem-mize
     SUBDIR += rubygem-mkrf
+    SUBDIR += rubygem-mmap2
     SUBDIR += rubygem-mocha
     SUBDIR += rubygem-moneta
     SUBDIR += rubygem-moneta06
@@ -5626,6 +5628,7 @@
     SUBDIR += rubygem-pqueue
     SUBDIR += rubygem-progressbar
     SUBDIR += rubygem-progressbar09
+    SUBDIR += rubygem-prometheus-client-mmap
     SUBDIR += rubygem-protected_attributes
     SUBDIR += rubygem-protocol
     SUBDIR += rubygem-pry

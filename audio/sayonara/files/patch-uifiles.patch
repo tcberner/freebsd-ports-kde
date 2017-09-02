@@ -1,5 +1,5 @@
---- ./src/GUI/Library/ImportFolderDialog/GUI_ImportFolder.h.orig	2017-09-01 16:40:49.499870000 +0200
-+++ ./src/GUI/Library/ImportFolderDialog/GUI_ImportFolder.h	2017-09-01 16:40:49.500827000 +0200
+--- src/GUI/Library/ImportFolderDialog/GUI_ImportFolder.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Library/ImportFolderDialog/GUI_ImportFolder.h
 @@ -21,7 +21,7 @@
  #ifndef GUIIMPORTFOLDER_H_
  #define GUIIMPORTFOLDER_H_
@@ -9,8 +9,8 @@
  #include "GUI/Helper/SayonaraWidget/SayonaraDialog.h"
  #include "Components/Library/Importer/LibraryImporter.h"
  
---- ./src/GUI/Library/InfoBox/GUI_LibraryInfoBox.h.orig	2017-09-01 16:41:05.848110000 +0200
-+++ ./src/GUI/Library/InfoBox/GUI_LibraryInfoBox.h	2017-09-01 16:41:05.849099000 +0200
+--- src/GUI/Library/InfoBox/GUI_LibraryInfoBox.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Library/InfoBox/GUI_LibraryInfoBox.h
 @@ -25,7 +25,7 @@
  #ifndef GUILIBRARYINFOBOX_H_
  #define GUILIBRARYINFOBOX_H_
@@ -20,151 +20,8 @@
  #include "GUI/Helper/SayonaraWidget/SayonaraDialog.h"
  
  
---- ./src/GUI/Preferences/RemoteControl/GUI_RemoteControl.h.orig	2017-09-01 16:29:32.378469000 +0200
-+++ ./src/GUI/Preferences/RemoteControl/GUI_RemoteControl.h	2017-09-01 16:29:32.379419000 +0200
-@@ -25,7 +25,7 @@
- #ifndef GUISOCKETSETUP_H_
- #define GUISOCKETSETUP_H_
- 
--#include "GUI/Preferences/ui_GUI_RemoteControl.h"
-+#include "ui_GUI_RemoteControl.h"
- 
- #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
- 
---- ./src/GUI/Preferences/PlayerPreferences/GUI_PlayerPreferences.h.orig	2017-09-01 16:28:58.782115000 +0200
-+++ ./src/GUI/Preferences/PlayerPreferences/GUI_PlayerPreferences.h	2017-09-01 16:28:58.783052000 +0200
-@@ -24,7 +24,7 @@
- #define GUI_PLAYERPREFERENCES_H
- 
- #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
--#include "GUI/Preferences/ui_GUI_PlayerPreferences.h"
-+#include "ui_GUI_PlayerPreferences.h"
- 
- 
- class GUI_PlayerPreferences :
---- ./src/GUI/Preferences/PreferenceDialog/GUI_PreferenceDialog.h.orig	2017-09-01 16:29:18.278341000 +0200
-+++ ./src/GUI/Preferences/PreferenceDialog/GUI_PreferenceDialog.h	2017-09-01 16:29:18.279338000 +0200
-@@ -25,7 +25,7 @@
- 
- #include <QDialog>
- #include <QList>
--#include "GUI/Preferences/ui_GUI_PreferenceDialog.h"
-+#include "ui_GUI_PreferenceDialog.h"
- #include "GUI/Helper/SayonaraWidget/SayonaraWidget.h"
- #include "Interfaces/PreferenceDialog/PreferenceDialogInterface.h"
- 
---- ./src/GUI/Preferences/LibraryPreferences/GUI_LibraryPreferences.h.orig	2017-09-01 16:28:39.554358000 +0200
-+++ ./src/GUI/Preferences/LibraryPreferences/GUI_LibraryPreferences.h	2017-09-01 16:28:39.555316000 +0200
-@@ -22,7 +22,7 @@
- #define GUI_LIBRARYPREFERENCES_H
- 
- #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
--#include "GUI/Preferences/ui_GUI_LibraryPreferences.h"
-+#include "ui_GUI_LibraryPreferences.h"
- 
- 
- class GUI_LibraryPreferences :
---- ./src/GUI/Preferences/PlaylistPreferences/GUI_PlaylistPreferences.h.orig	2017-09-01 16:29:09.318344000 +0200
-+++ ./src/GUI/Preferences/PlaylistPreferences/GUI_PlaylistPreferences.h	2017-09-01 16:29:09.319283000 +0200
-@@ -28,7 +28,7 @@
- 
- 
- #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
--#include "GUI/Preferences/ui_GUI_PlaylistPreferences.h"
-+#include "ui_GUI_PlaylistPreferences.h"
- 
- 
- class GUI_PlaylistPreferences :
---- ./src/GUI/Preferences/Fonts/GUI_FontConfig.h.orig	2017-09-01 16:27:47.741099000 +0200
-+++ ./src/GUI/Preferences/Fonts/GUI_FontConfig.h	2017-09-01 16:27:47.742008000 +0200
-@@ -24,7 +24,7 @@
- #define GUI_FONTCONFIG_H
- 
- #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
--#include "GUI/Preferences/ui_GUI_FontConfig.h"
-+#include "ui_GUI_FontConfig.h"
- 
- #include <QFontDatabase>
- #include <QFont>
---- ./src/GUI/Preferences/Language/GUI_LanguageChooser.h.orig	2017-09-01 16:28:09.769343000 +0200
-+++ ./src/GUI/Preferences/Language/GUI_LanguageChooser.h	2017-09-01 16:28:09.770298000 +0200
-@@ -26,7 +26,7 @@
- #include <QMap>
- #include <QShowEvent>
- 
--#include "GUI/Preferences/ui_GUI_LanguageChooser.h"
-+#include "ui_GUI_LanguageChooser.h"
- #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
- 
- 
---- ./src/GUI/Preferences/Notifications/GUI_Notifications.h.orig	2017-09-01 16:28:48.201983000 +0200
-+++ ./src/GUI/Preferences/Notifications/GUI_Notifications.h	2017-09-01 16:28:48.202965000 +0200
-@@ -25,7 +25,7 @@
- 
- #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
- #include "Interfaces/Notification/NotificationHandler.h"
--#include "GUI/Preferences/ui_GUI_Notifications.h"
-+#include "ui_GUI_Notifications.h"
- 
- 
- class GUI_Notifications :
---- ./src/GUI/Preferences/StreamRecorder/GUI_StreamRecorder.h.orig	2017-09-01 16:30:37.083374000 +0200
-+++ ./src/GUI/Preferences/StreamRecorder/GUI_StreamRecorder.h	2017-09-01 16:30:37.084382000 +0200
-@@ -25,7 +25,7 @@
- #ifndef GUI_STREAMRECORDER_H_
- #define GUI_STREAMRECORDER_H_
- 
--#include "GUI/Preferences/ui_GUI_StreamRecorder.h"
-+#include "ui_GUI_StreamRecorder.h"
- #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
- 
- class GUI_StreamRecorder :
---- ./src/GUI/Preferences/Broadcast/GUI_BroadcastSetup.h.orig	2017-09-01 16:27:29.816811000 +0200
-+++ ./src/GUI/Preferences/Broadcast/GUI_BroadcastSetup.h	2017-09-01 16:27:29.817791000 +0200
-@@ -23,7 +23,7 @@
- #ifndef GUI_BROADCASTSETUP_H
- #define GUI_BROADCASTSETUP_H
- 
--#include "GUI/Preferences/ui_GUI_BroadcastSetup.h"
-+#include "ui_GUI_BroadcastSetup.h"
- #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
- 
- class GUI_BroadcastSetup :
---- ./src/GUI/Preferences/LastFM/GUI_LastFM.h.orig	2017-09-01 16:28:27.770258000 +0200
-+++ ./src/GUI/Preferences/LastFM/GUI_LastFM.h	2017-09-01 16:28:27.771266000 +0200
-@@ -29,7 +29,7 @@
- #ifndef GUI_LASTFM_H_
- #define GUI_LASTFM_H_
- 
--#include "GUI/Preferences/ui_GUI_LastFM.h"
-+#include "ui_GUI_LastFM.h"
- 
- #include "Components/StreamPlugins/LastFM/LastFM.h"
- #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
---- ./src/GUI/Preferences/Shortcuts/GUI_ShortcutEntry.h.orig	2017-09-01 16:30:13.275074000 +0200
-+++ ./src/GUI/Preferences/Shortcuts/GUI_ShortcutEntry.h	2017-09-01 16:30:13.276118000 +0200
-@@ -24,7 +24,7 @@
- 
- #include "GUI/Helper/SayonaraWidget/SayonaraWidget.h"
- #include "GUI/Helper/Shortcuts/ShortcutHandler.h"
--#include "GUI/Preferences/ui_GUI_ShortcutEntry.h"
-+#include "ui_GUI_ShortcutEntry.h"
- 
- 
- /**
---- ./src/GUI/Preferences/Shortcuts/GUI_Shortcuts.h.orig	2017-09-01 16:30:26.100136000 +0200
-+++ ./src/GUI/Preferences/Shortcuts/GUI_Shortcuts.h	2017-09-01 16:30:26.101203000 +0200
-@@ -24,7 +24,7 @@
- #define GUI_SHORTCUTS_H
- 
- 
--#include "GUI/Preferences/ui_GUI_Shortcuts.h"
-+#include "ui_GUI_Shortcuts.h"
- #include "GUI/Helper/Shortcuts/ShortcutHandler.h"
- 
- #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
---- ./src/GUI/Playlist/BottomBar/GUI_PlaylistBottomBar.h.orig	2017-09-01 16:30:06.458969000 +0200
-+++ ./src/GUI/Playlist/BottomBar/GUI_PlaylistBottomBar.h	2017-09-01 16:30:06.459915000 +0200
+--- src/GUI/Playlist/BottomBar/GUI_PlaylistBottomBar.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Playlist/BottomBar/GUI_PlaylistBottomBar.h
 @@ -24,7 +24,7 @@
  #define PLAYLISTBOTTOMBAR_H
  
@@ -174,3 +31,146 @@
  
  #include "Helper/Shutdown/Shutdown.h"
  #include "Helper/Playlist/PlaylistMode.h"
+--- src/GUI/Preferences/Broadcast/GUI_BroadcastSetup.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Preferences/Broadcast/GUI_BroadcastSetup.h
+@@ -23,7 +23,7 @@
+ #ifndef GUI_BROADCASTSETUP_H
+ #define GUI_BROADCASTSETUP_H
+ 
+-#include "GUI/Preferences/ui_GUI_BroadcastSetup.h"
++#include "ui_GUI_BroadcastSetup.h"
+ #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
+ 
+ class GUI_BroadcastSetup :
+--- src/GUI/Preferences/Fonts/GUI_FontConfig.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Preferences/Fonts/GUI_FontConfig.h
+@@ -24,7 +24,7 @@
+ #define GUI_FONTCONFIG_H
+ 
+ #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
+-#include "GUI/Preferences/ui_GUI_FontConfig.h"
++#include "ui_GUI_FontConfig.h"
+ 
+ #include <QFontDatabase>
+ #include <QFont>
+--- src/GUI/Preferences/Language/GUI_LanguageChooser.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Preferences/Language/GUI_LanguageChooser.h
+@@ -26,7 +26,7 @@
+ #include <QMap>
+ #include <QShowEvent>
+ 
+-#include "GUI/Preferences/ui_GUI_LanguageChooser.h"
++#include "ui_GUI_LanguageChooser.h"
+ #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
+ 
+ 
+--- src/GUI/Preferences/LastFM/GUI_LastFM.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Preferences/LastFM/GUI_LastFM.h
+@@ -29,7 +29,7 @@
+ #ifndef GUI_LASTFM_H_
+ #define GUI_LASTFM_H_
+ 
+-#include "GUI/Preferences/ui_GUI_LastFM.h"
++#include "ui_GUI_LastFM.h"
+ 
+ #include "Components/StreamPlugins/LastFM/LastFM.h"
+ #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
+--- src/GUI/Preferences/LibraryPreferences/GUI_LibraryPreferences.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Preferences/LibraryPreferences/GUI_LibraryPreferences.h
+@@ -22,7 +22,7 @@
+ #define GUI_LIBRARYPREFERENCES_H
+ 
+ #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
+-#include "GUI/Preferences/ui_GUI_LibraryPreferences.h"
++#include "ui_GUI_LibraryPreferences.h"
+ 
+ 
+ class GUI_LibraryPreferences :
+--- src/GUI/Preferences/Notifications/GUI_Notifications.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Preferences/Notifications/GUI_Notifications.h
+@@ -25,7 +25,7 @@
+ 
+ #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
+ #include "Interfaces/Notification/NotificationHandler.h"
+-#include "GUI/Preferences/ui_GUI_Notifications.h"
++#include "ui_GUI_Notifications.h"
+ 
+ 
+ class GUI_Notifications :
+--- src/GUI/Preferences/PlayerPreferences/GUI_PlayerPreferences.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Preferences/PlayerPreferences/GUI_PlayerPreferences.h
+@@ -24,7 +24,7 @@
+ #define GUI_PLAYERPREFERENCES_H
+ 
+ #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
+-#include "GUI/Preferences/ui_GUI_PlayerPreferences.h"
++#include "ui_GUI_PlayerPreferences.h"
+ 
+ 
+ class GUI_PlayerPreferences :
+--- src/GUI/Preferences/PlaylistPreferences/GUI_PlaylistPreferences.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Preferences/PlaylistPreferences/GUI_PlaylistPreferences.h
+@@ -28,7 +28,7 @@
+ 
+ 
+ #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
+-#include "GUI/Preferences/ui_GUI_PlaylistPreferences.h"
++#include "ui_GUI_PlaylistPreferences.h"
+ 
+ 
+ class GUI_PlaylistPreferences :
+--- src/GUI/Preferences/PreferenceDialog/GUI_PreferenceDialog.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Preferences/PreferenceDialog/GUI_PreferenceDialog.h
+@@ -25,7 +25,7 @@
+ 
+ #include <QDialog>
+ #include <QList>
+-#include "GUI/Preferences/ui_GUI_PreferenceDialog.h"
++#include "ui_GUI_PreferenceDialog.h"
+ #include "GUI/Helper/SayonaraWidget/SayonaraWidget.h"
+ #include "Interfaces/PreferenceDialog/PreferenceDialogInterface.h"
+ 
+--- src/GUI/Preferences/RemoteControl/GUI_RemoteControl.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Preferences/RemoteControl/GUI_RemoteControl.h
+@@ -25,7 +25,7 @@
+ #ifndef GUISOCKETSETUP_H_
+ #define GUISOCKETSETUP_H_
+ 
+-#include "GUI/Preferences/ui_GUI_RemoteControl.h"
++#include "ui_GUI_RemoteControl.h"
+ 
+ #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
+ 
+--- src/GUI/Preferences/Shortcuts/GUI_ShortcutEntry.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Preferences/Shortcuts/GUI_ShortcutEntry.h
+@@ -24,7 +24,7 @@
+ 
+ #include "GUI/Helper/SayonaraWidget/SayonaraWidget.h"
+ #include "GUI/Helper/Shortcuts/ShortcutHandler.h"
+-#include "GUI/Preferences/ui_GUI_ShortcutEntry.h"
++#include "ui_GUI_ShortcutEntry.h"
+ 
+ 
+ /**
+--- src/GUI/Preferences/Shortcuts/GUI_Shortcuts.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Preferences/Shortcuts/GUI_Shortcuts.h
+@@ -24,7 +24,7 @@
+ #define GUI_SHORTCUTS_H
+ 
+ 
+-#include "GUI/Preferences/ui_GUI_Shortcuts.h"
++#include "ui_GUI_Shortcuts.h"
+ #include "GUI/Helper/Shortcuts/ShortcutHandler.h"
+ 
+ #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
+--- src/GUI/Preferences/StreamRecorder/GUI_StreamRecorder.h.orig	2016-10-30 11:53:25 UTC
++++ src/GUI/Preferences/StreamRecorder/GUI_StreamRecorder.h
+@@ -25,7 +25,7 @@
+ #ifndef GUI_STREAMRECORDER_H_
+ #define GUI_STREAMRECORDER_H_
+ 
+-#include "GUI/Preferences/ui_GUI_StreamRecorder.h"
++#include "ui_GUI_StreamRecorder.h"
+ #include "Interfaces/PreferenceDialog/PreferenceWidgetInterface.h"
+ 
+ class GUI_StreamRecorder :

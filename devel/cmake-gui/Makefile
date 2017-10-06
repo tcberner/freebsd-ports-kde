@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-DISTVERSION=	3.9.3
+DISTVERSION=	3.10.0-rc1
 CATEGORIES=	devel
-MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
+MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R:R}/
 PKGNAMESUFFIX=	-gui
 
 MAINTAINER=	kde@FreeBSD.org

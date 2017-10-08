@@ -1,0 +1,25 @@
+https://sourceforge.net/p/qmmp-dev/code/7521/
+
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -8,6 +8,10 @@
+ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+   SET(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} /opt/local/include)
+ ENDIF()
++
++if(POLICY CMP0071)
++  cmake_policy(SET CMP0071 NEW)
++endif()
+
+ #Qt5 modules
+ SET(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /opt/qt56/lib/cmake)
+--- src/plugins/General/hotkey/CMakeLists.txt
++++ src/plugins/General/hotkey/CMakeLists.txt
+@@ -47,6 +47,7 @@
+ include_directories(${CMAKE_CURRENT_BINARY_DIR})
+
+ IF(X11_FOUND)
++set_property(SOURCE hotkeymanager_x11.cpp PROPERTY SKIP_AUTOMOC ON)
+ ADD_LIBRARY(hotkey MODULE ${libhotkey_SRCS} ${libhotkey_UIS_H} ${libhotkey_RCC_SRCS})
+ add_dependencies(hotkey qmmpui)
+ target_link_libraries(hotkey Qt5::Widgets Qt5::X11Extras -lqmmpui -lqmmp ${X11_LDFLAGS})

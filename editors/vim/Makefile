@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	8.0.1159
+PORTVERSION=	8.0.1231
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -13,6 +14,8 @@ LICENSE=	VIM
 LICENSE_NAME=	VIM License
 LICENSE_FILE=	${WRKSRC}/runtime/doc/uganda.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+CONFLICTS_INSTALL?=	vim-lite-[0-9]*
 
 USES=		cpe iconv ncurses pkgconfig shebangfix
 MAKE_JOBS_UNSAFE=	yes
@@ -30,21 +33,31 @@ VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
 
 ALL_TARGET=	# empty
 MAKE_ARGS+=	CC="${CC}" \
-		CONF_ARGS="--prefix=${PREFIX} ${CSCOPE_ARG}" \
+		CONF_ARGS="--prefix=${PREFIX}" \
 		STRIP="${STRIP_CMD}" \
 		VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER} \
 		VIMRCLOC=${ETCDIR} \
 		CONF_OPT_MULTIBYTE=--enable-multibyte \
-		CONF_TERM_LIB=--with-tlib=ncurses
+		CONF_TERM_LIB=--with-tlib=ncurses \
+		CONF_OPT_PYTHON="${CONF_OPT_PYTHON}"
 
 # OPTIONS
-OPTIONS_DEFAULT=	CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS GTK2 LUA PERL PYTHON RUBY TCL
-OPTIONS_DEFINE=		CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS LITE NLS XTERM_SAVE
+OPTIONS_DEFAULT=	CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS GTK2 PERL PYTHON2 RUBY
+OPTIONS_DEFINE=		CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS NLS XTERM_SAVE
 OPTIONS_SINGLE=		UI
 OPTIONS_SINGLE_UI=	ATHENA CONSOLE GNOME GTK2 GTK3 MOTIF X11
 OPTIONS_GROUP=		LANGBIND
-OPTIONS_GROUP_LANGBIND=	LUA PERL PYTHON RUBY TCL
+OPTIONS_GROUP_LANGBIND=	LUA PERL PYTHON2 PYTHON3 RUBY TCL
 OPTIONS_SUB=		yes
+
+.if defined(LITE)
+OPTIONS_DEFAULT=	DEFAULT_VIMRC
+OPTIONS_SLAVE=		CONSOLE
+# Exclude everything except the two options above
+OPTIONS_EXCLUDE:=	${OPTIONS_DEFINE:NDEFAULT_VIMRC} \
+			${OPTIONS_SINGLE_UI:NCONSOLE} \
+			${OPTIONS_GROUP_LANGBIND}
+.endif
 
 DEFAULT_VIMRC_DESC=	Install bundled vimrc as default setting
 EXUBERANT_CTAGS_DESC=	Use exctags instead of ctags
@@ -60,28 +73,12 @@ LANGBIND_DESC=		Optional language bindings
 # BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
 OPTIONS_EXCLUDE_powerpc64=	RUBY
 
-.if defined(LITE)
-OPTIONS_DEFAULT=DEFAULT_VIMRC
-OPTIONS_SLAVE=	CONSOLE LITE
-OPTIONS_EXCLUDE:=	${OPTIONS_DEFINE:NDEFAULT_VIMRC:NLITE} \
-			${OPTIONS_SINGLE_UI:NCONSOLE} \
-			${OPTIONS_GROUP_LANGBIND}
-.else
-OPTIONS_EXCLUDE=LITE
-.endif
-
 # GENERAL OPTIONS
 CSCOPE_MAKE_ARGS=	CONF_OPT_CSCOPE=--enable-cscope
 CSCOPE_MAKE_ARGS_OFF=	CONF_OPT_CSCOPE=--disable-cscope
 CSCOPE_RUN_DEPENDS=	cscope:devel/cscope
 
 EXUBERANT_CTAGS_RUN_DEPENDS=	exctags:devel/ctags
-
-LITE_CONFLICTS_INSTALL=		vim-[0-9]*
-LITE_CONFLICTS_INSTALL_OFF=	vim-lite-[0-9]*
-LITE_MAKE_ARGS_OFF=		CONF_OPT_FEAT=--with-features=huge \
-				CONF_OPT_INPUT=--enable-xim \
-				CONF_OPT_OUTPUT=--enable-fontset
 
 NLS_MAKE_ARGS=		CONF_OPT_NLS=--enable-nls
 NLS_MAKE_ARGS_OFF=	CONF_OPT_NLS=--disable-nls
@@ -93,6 +90,8 @@ ATHENA_PLIST_SUB=	GUI="" DESKTOP="@comment "
 ATHENA_USE=		XORG=ice,sm,x11,xaw,xmu,xpm,xt
 
 CONSOLE_MAKE_ARGS=	CONF_OPT_GUI="--enable-gui=no --without-x"
+CONSOLE_MAKE_ARGS_OFF=	CONF_OPT_INPUT=--enable-xim \
+			CONF_OPT_OUTPUT=--enable-fontset
 CONSOLE_PLIST_SUB=	GUI="@comment " DESKTOP="@comment "
 
 GNOME_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=gnome2
@@ -132,8 +131,14 @@ PERL_MAKE_ARGS=		CONF_OPT_PERL=--enable-perlinterp
 PERL_MAKE_ARGS_OFF=	CONF_OPT_PERL=--disable-perlinterp
 PERL_USES=		perl5
 
-PYTHON_MAKE_ARGS_OFF=	CONF_OPT_PYTHON="--disable-pythoninterp --disable-python3interp"
-PYTHON_USES=		python
+PYTHON2_VARS=		CONF_OPT_PYTHON+=--enable-pythoninterp
+PYTHON2_VARS_OFF=	CONF_OPT_PYTHON+=--disable-pythoninterp
+PYTHON2_BUILD_DEPENDS=	python${PYTHON2_DEFAULT}:lang/python${PYTHON2_DEFAULT:S/.//}
+PYTHON2_RUN_DEPENDS=	${PYTHON2_BUILD_DEPENDS}
+
+PYTHON3_VARS=		CONF_OPT_PYTHON+=--enable-python3interp
+PYTHON3_VARS_OFF=	CONF_OPT_PYTHON+=--disable-python3interp
+PYTHON3_USES=		python:3.4+
 
 RUBY_MAKE_ARGS=		CONF_OPT_RUBY=--enable-rubyinterp
 RUBY_MAKE_ARGS_OFF=	CONF_OPT_RUBY=--disable-rubyinterp
@@ -143,16 +148,6 @@ TCL_MAKE_ARGS=		CONF_OPT_TCL="--enable-tclinterp --with-tclsh=tclsh${TCL_VER}"
 TCL_MAKE_ARGS_OFF=	CONF_OPT_TCL=--disable-tclinterp
 TCL_USES=		tcl:85+
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MPYTHON}
-.if ${PYTHON_REL} < 3000
-MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-pythoninterp --disable-python3interp"
-.else
-MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-python3interp --disable-pythoninterp"
-.endif
-.endif
-
 post-extract:
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${WRKSRC}/runtime/keymap
 
@@ -161,6 +156,8 @@ post-patch:
 	@${ECHO_CMD} '#define SYS_GVIMRC_FILE "'${ETCDIR}'/gvimrc"' >> ${WRKSRC}/src/feature.h
 	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB}|g; s|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/src/auto/configure
+# Work around qa-check shebang error
+	@${REINPLACE_CMD} -e 1d ${WRKSRC}/runtime/tools/demoserver.py
 
 pre-configure:
 	@${CP} ${WRKSRC}/src/config.mk.dist ${WRKSRC}/src/auto/config.mk
@@ -180,17 +177,13 @@ post-install:
 
 # OPTIONS
 post-patch-EXUBERANT_CTAGS-off:
-	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's!ctags -R \.!${FIND} . -type f \\| ${XARGS} ctags!g'
+	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -Ee 's!ctags -R ?\.!${FIND} . -type f | ${XARGS} ctags!g'
 
 post-patch-EXUBERANT_CTAGS-on:
-	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R \.|exctags -R .|g'
+	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R|exctags -R|g'
 
 post-patch-LUA-on:
 	@${REINPLACE_CMD} -e 's|set dummy lua;|set dummy ${LUA_CMD};|g' ${WRKSRC}/src/auto/configure
-
-post-patch-PYTHON-off:
-# Work around qa-check shebang error
-	@${REINPLACE_CMD} -e 1d ${WRKSRC}/runtime/tools/demoserver.py
 
 post-patch-XTERM_SAVE-on:
 	@${REINPLACE_CMD} -e '/FEAT_XTERM_SAVE/ s|.*|#define FEAT_XTERM_SAVE|' ${WRKSRC}/src/feature.h
@@ -205,4 +198,4 @@ post-install-NLS-off:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap
 	${INSTALL_DATA} ${WRKSRC}/runtime/keymap/* ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

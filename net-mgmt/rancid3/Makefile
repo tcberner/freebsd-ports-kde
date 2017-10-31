@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	rancid
-PORTVERSION=	3.6.2
-PORTREVISION=	4
+PORTVERSION=	3.7
+PORTREVISION=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 PKGNAMESUFFIX=	3
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Really Awesome New Cisco confIg Differ
+
+BROKEN=	Fails to patch
 
 LIB_DEPENDS=	libexpect.so:lang/expect
 RUN_DEPENDS=	p5-LockFile-Simple>=0:devel/p5-LockFile-Simple

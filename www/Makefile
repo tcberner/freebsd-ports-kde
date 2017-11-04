@@ -13,6 +13,7 @@
     SUBDIR += R-cran-scrapeR
     SUBDIR += R-cran-selectr
     SUBDIR += R-cran-shiny
+    SUBDIR += UniversalFeedCreator
     SUBDIR += WebMagick
     SUBDIR += ach
     SUBDIR += adzap
@@ -1498,6 +1499,7 @@
     SUBDIR += podcastamatic
     SUBDIR += polipo
     SUBDIR += pound
+    SUBDIR += privatebin
     SUBDIR += privoxy
     SUBDIR += protovis
     SUBDIR += pserv

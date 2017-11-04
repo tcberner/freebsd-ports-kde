@@ -176,6 +176,7 @@
     SUBDIR += fluidsynth
     SUBDIR += fluidsynth-dssi
     SUBDIR += fmit
+    SUBDIR += foo-yc20
     SUBDIR += forked-daapd
     SUBDIR += fpc-a52
     SUBDIR += fpc-mad
@@ -662,6 +663,7 @@
     SUBDIR += py-pyaudio
     SUBDIR += py-pylast
     SUBDIR += py-pyliblo
+    SUBDIR += py-pysndfile
     SUBDIR += py-shout
     SUBDIR += py-soundcloud
     SUBDIR += py-soundscrape
@@ -696,6 +698,7 @@
     SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth
+    SUBDIR += rtaudio
     SUBDIR += rtmidi
     SUBDIR += rubberband
     SUBDIR += ruby-smf

@@ -130,6 +130,7 @@
     SUBDIR += espeak
     SUBDIR += esperanza
     SUBDIR += etcd
+    SUBDIR += eteroj-lv2
     SUBDIR += etktab
     SUBDIR += exaile
     SUBDIR += exaile-devel
@@ -330,6 +331,7 @@
     SUBDIR += id3v2
     SUBDIR += idjc
     SUBDIR += ifp-line
+    SUBDIR += infamous-plugins-lv2
     SUBDIR += ir-lv2
     SUBDIR += jack
     SUBDIR += jack-keyboard
@@ -472,6 +474,7 @@
     SUBDIR += lollypop
     SUBDIR += lpac
     SUBDIR += lua51-mpd
+    SUBDIR += luppp
     SUBDIR += lv2
     SUBDIR += lv2file
     SUBDIR += lvtk

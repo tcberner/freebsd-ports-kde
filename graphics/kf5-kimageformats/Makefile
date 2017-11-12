@@ -17,6 +17,7 @@ USE_QT5=	buildtools_build core gui printsupport qmake_build widgets
 
 OPTIONS_DEFINE=	OPENEXR
 OPTIONS_DEFAULT=OPENEXR
+OPTIONS_SUB=	YES
 
 OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
 OPENEXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR

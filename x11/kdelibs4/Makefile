@@ -73,6 +73,7 @@ SHEBANG_FILES=	kdecore/kconfig_compiler/checkkcfg.pl \
 
 OPTIONS_DEFINE=	AVAHI OPENEXR UPNP
 OPTIONS_DEFAULT=AVAHI OPENEXR
+OPTIONS_SUB=	YES
 
 AVAHI_LIB_DEPENDS=	libavahi-core.so:net/avahi-app
 

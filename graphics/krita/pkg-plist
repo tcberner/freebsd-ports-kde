@@ -516,7 +516,7 @@ share/icons/hicolor/scalable/apps/calligrakrita.svgz
 %%DATADIR%%/input/tabletpro.profile
 %%DATADIR%%/metadata/schemas/dc.schema
 %%DATADIR%%/metadata/schemas/exif.schema
-%%DATADIR%%/metadata/schemas/exrchannels.schema
+%%OPENEXR%%%%DATADIR%%/metadata/schemas/exrchannels.schema
 %%DATADIR%%/metadata/schemas/mkn.schema
 %%DATADIR%%/metadata/schemas/tiff.schema
 %%DATADIR%%/metadata/schemas/xmp.schema
